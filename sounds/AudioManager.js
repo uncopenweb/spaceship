@@ -114,7 +114,6 @@ dojo.declare('spaceship.sounds.AudioManager', [spaceship.utils.Subscriber, uow.a
      * @subscribe UPDATE_PREFERENCE_TOPIC string
      */
     onUpdatePref: function(key) {
-		console.log(this.prefs.volume.value);
         if(key == 'speechVolume' || key == undefined) {
             this.setProperty({
                 name: 'volume', 
