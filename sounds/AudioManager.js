@@ -114,11 +114,10 @@ dojo.declare('spaceship.sounds.AudioManager', [spaceship.utils.Subscriber, uow.a
      * @subscribe UPDATE_PREFERENCE_TOPIC string
      */
     onUpdatePref: function(key) {
-		console.log(this.prefs.volume.value);
         if(key == 'speechVolume' || key == undefined) {
             this.setProperty({
                 name: 'volume', 
-                value : this.prefs.speechVolume.value*this.prefs.volume.value, 
+                value : this.prefs.speechVolume.value, 
                 channel : spaceship.sounds.SPEECH_CHANNEL,
                 immediate: true
             });
@@ -140,7 +139,7 @@ dojo.declare('spaceship.sounds.AudioManager', [spaceship.utils.Subscriber, uow.a
         if(key == 'soundVolume' || key == undefined) {
             this.setProperty({
                 name: 'volume', 
-                value: this.prefs.soundVolume.value*this.prefs.volume.value, 
+                value: this.prefs.soundVolume.value, 
                 channel: spaceship.sounds.SOUND_CHANNEL,
                 immediate: true
             });
@@ -148,7 +147,7 @@ dojo.declare('spaceship.sounds.AudioManager', [spaceship.utils.Subscriber, uow.a
         if(key == 'musicVolume' || key == undefined) {
             this.setProperty({
                 name: 'volume', 
-                value: this.prefs.musicVolume.value*this.prefs.volume.value,
+                value: this.prefs.musicVolume.value,
                 channel: spaceship.sounds.MUSIC_CHANNEL,
                 immediate: true
             });
