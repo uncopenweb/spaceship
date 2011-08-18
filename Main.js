@@ -77,11 +77,11 @@ dojo.declare('spaceship.Main', null, {
         var readyFunc = dojo.hitch(this, 'onLibReady');
         // when all resources finish loading
         dojo.addOnLoad(readyFunc);
-        // enable preferences
-        spaceship.preferences.PreferencesModel.startup();
         // register for when audio is ready
         var def = spaceship.sounds.AudioManager.startup();
         def.addCallback(readyFunc);
+		// enable preferences
+        spaceship.preferences.PreferencesModel.startup();
         // register for when images are ready
         def = spaceship.images.GraphicsManager.startup();
         def.addCallback(readyFunc);
