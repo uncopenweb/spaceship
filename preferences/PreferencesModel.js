@@ -25,7 +25,6 @@ dojo.declare('spaceship.preferences.PreferencesModel', spaceship.utils.Subscribe
         // assuming synchronous response, if not initialized then manually
         // init because we're running outside of hark.org
         if(!this._initialized) {
-			console.log('Not initialized!');
             this.buildPrefs({});
         }
     },
